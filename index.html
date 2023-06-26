@@ -1,0 +1,152 @@
+<!--NOTE: this is my first HTML and to help navigate the new syntax I have added notes that may seem obvious. -->
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<!--This changes the title of the tab in the browser-->
+		<!--Metadata for the page should be placed in the head-->
+		<title>Phillip van Staden</title>
+		
+		<!-- internal styling rules should be placed here, or a link to external styling may be used -->
+		
+		<style>
+			.heading{
+				font-family: Ariel, Helvetica;
+				font-size: 24;
+				background-color: #555;
+				color: white;
+				padding: 10px 16px;
+				}
+				
+			.top-container{
+					background-color: #f1f1f1;
+					padding: 30px;
+				}
+			
+			<!-- class selectors will change the attributes of the element in which it has been specified -->
+			.newClass{
+				color: blue;
+				font-family: Arial, Helvetica;
+				background-color: yellow;
+				}
+			
+			<!-- id selectors will change the attributes of the element in which it has been specified; should only be used once -->
+			#idSelector{
+				font-weight: bolder;
+				font-family: cursive;
+				}
+				
+			.sticky {
+					position: fixed;
+					top: 0;
+					width: 100%;
+				}
+
+			.sticky + .content {
+					padding-top: 102px;
+				}
+				
+			ul.no-bullets {
+				  list-style-type: none;
+				  margin: 0;
+				  padding: 0;
+				}
+			<!-- 
+				inline styling is given higher priority over internal styling
+				inline styling should be used sparingly, as the objective is to seperate style and content
+			-->
+			
+		</style>
+		
+	</head>
+	
+	<body>
+		<!-- use <div> to create sections -->
+		<div class = 'heading' id = 'myHeader'>
+			<!-- Use h1 to h6 to indicated headings with importance from highest (h1) to lowest (h6)-->
+			<h1>Phillip van Staden</h1>
+			
+			<!-- Use br to create a line break; can be added to the end of a line-->
+		</div>
+		
+		<div class = 'top-container'>
+			<!-- add images using the img tag; src indicates the source of the image and may be either URL or local directory; 
+			alt indicates alternate text if image cannot be displayed 
+			width and height is used to determine size of image -->
+			<img src = 'id photo.jpeg' alt = 'Image not found' width = 185.64 height = 252.62>
+			
+			<h2>A little about Phillip</h2>
+			
+			<!-- p indicates a paragraph of text in the body of the HTML -->
+			<p>Devoted husband and father of two sets of twins (yes, you've read that correctly), Phillip has dedicated his life to the service of others.</p> 
+			<p>From his early years as a young adult, he worked tirelessly to learn and cultivate the skills and attributes of a servant and a leader.</p>
+			<p>Having worked in both the hospitality industry and the finance industry, he has developed the talent to create, implement and manage systems and procedures that will improve both production and quality of service offered to clients.</p>
+			<p>Phillip also maintained a passion for technology and having built up the skills that allows him to be a servant-leader, he has made of focus of increasing his knowledge and skills in computer science.</p>
+			<p>His biggest ambition is to create software that will enable users to improve their lives.</p>	
+			
+		</div>
+		
+		<div class = 'content'>
+		
+			<h2>Skills and Competencies</h2>	
+			<!-- Use ul (unordered lists) or ol (ordered/ numbered lists) to add lists-->
+			<ul class = 'no-bullets'>
+				<li> System and Procedure development/implementation</li>
+				<li> Data Analysis using CRM and POS</li>
+				<li> Building and Maintaining client relations</li>
+				<li> Effective communication between key stakeholders</li>
+				<li> Basic knowledge/ understanding of Python and HTML</li>
+			</ul> 
+			
+			<h2>Education</h2>
+			<ul>
+				<li> Currently enrolled with Hyperiondev - Software Enginering Bootcamp</li>
+				<li> Higher Certificate in Financial Planning NQF5 with distinction - 2018</li>
+				<li> National Diploma N6 in Hospitality and Catering Management - 2006</li>
+				<li> Gr. 12 - 2003 </li>
+			</ul> 
+			
+			<h2>Work Experience</h2>
+			<ul>
+				<li> 2020 - current: Financial Adviser - Sanlam life </li>
+				<li> 2015 - 2020: Financial Adviser - AIFA</li>
+				<li> 2013 - 2015: Financial Adviser - Old Mutual PFA</li>
+				<li> 2012 - 2013: Managing Director - Epicure Catering</li>
+			</ul> 
+			
+			<h2>Contact Information</h2>
+			
+			<!-- 
+				If you are going to create a list of links, better to use nav; in this instance it is intended to create a list of contact information
+				and add links to the contact information rather than a pure list of links
+				Reference page 66 of Notes for Professionals
+			 -->
+			<ul>
+				<li> Email: <a href = "mailto:phillipvanstaden@outlook.com" />phillipvanstaden@outlook.com</a> </li>
+				<li> Cell: 082 737 9630</li>
+				<li> LinkedIn: <a target = '_blank' href = "http://www.linkedin.com/in/phillipvanstaden" />phillipvanstaden</a></li>
+				<li> Discord: <a target = '_blank' href = "https://discord.com/users/972541669750738974" />TwinVaderX2</a></li></li>
+				<li> Instagram: <a target = '_blank' href = 'https://ig.me/m/phillipvstaden'>phillipvstaden</a></li>
+			</ul> 
+			
+		</div>
+	<!-- script was taken from w3schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sticky_header -->
+	<script>
+		window.onscroll = function() {myFunction()};
+
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset > sticky) {
+			header.classList.add("sticky");
+		  } else {
+			header.classList.remove("sticky");
+		  }
+		}
+	</script>
+	
+	</body>
+	
+</html>
